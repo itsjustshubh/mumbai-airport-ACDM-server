@@ -11,6 +11,7 @@ airport-status-dashboard/
 ├── dep_status.py
 ├── div_chart_test.py
 ├── tsat_status.py
+├── show_stations.py
 ├── utils.py
 ├── requirements.txt
 ├── Makefile
@@ -24,6 +25,7 @@ airport-status-dashboard/
 - **dep_status.py**: Fetches and prints departure status data.
 - **div_chart_test.py**: Fetches, processes, and prints real-time movement data from JavaScript datasets.
 - **tsat_status.py**: Fetches and prints TSAT status data.
+- **show_stations.py** Fethes and prints live Weather data for (VABB) Bombay Airport.
 - **utils.py**: Utility functions for fetching data, extracting table data, and generating headers.
 - **requirements.txt**: Contains the Python dependencies for the project.
 - **Makefile**: Provides commands to set up, run, and clean the project.
@@ -33,7 +35,7 @@ airport-status-dashboard/
 
 ### Prerequisites
 
-- Python 3.7+
+- Python 3.12+
 - pip (Python package installer)
 - make (build automation tool)
 
@@ -76,6 +78,7 @@ The Flask application should now be running on `http://127.0.0.1:5000`.
 - **GET /dep_status**: Retrieves departure status data.
 - **GET /tsat_status**: Retrieves TSAT status data.
 - **GET /div_chart_test**: Retrieves real-time movement data.
+- **GET /show_stations**: Retrieves real-time weather data.
 
 ## Environment Variables
 
