@@ -110,3 +110,31 @@ def get_status_data(url, table_ids):
         return json.dumps(all_data, indent=4)
     else:
         return json.dumps({'error': 'Failed to retrieve data'})
+
+
+def parse_atis_data(html_content):
+    """
+    Parses HTML content to extract ATIS data into structured JSON format.
+
+    Args:
+        html_content (str): HTML content as a string.
+
+    Returns:
+        str: A JSON string with structured ATIS data.
+    """
+    soup = BeautifulSoup(html_content, 'html.parser')
+    # Assuming each ATIS record is within a table row (<tr>)
+    rows = soup.find_all('tr')
+    data = []
+
+    # Parse each row
+    for row in rows:
+        cols = row.find_all('td')
+        if len(cols) > 1:  # Ensure the row has multiple columns, to exclude headers or empty rows
+            entry = {
+                "station": cols[0].get_text(strip=True),
+                "atis_message": cols[1].get_text(strip=True)
+            }
+            data.append(entry)
+
+    return json.dumps(data, indent=4)

@@ -10,6 +10,9 @@ from flask import Flask, jsonify
 from utils import get_status_data
 from tsat_status import get_tsat_status
 from div_chart_test import get_div_chart_test_status
+# Assuming this function exists and is configured to fetch ATIS data
+from show_stations import get_atis_data
+
 
 app = Flask(__name__)
 
@@ -69,6 +72,16 @@ def div_chart_test():
     """
     URL = os.getenv('URL_DIV_CHART_TEST')
     data = get_div_chart_test_status(URL)
+    return jsonify(data)
+
+@app.route('/show_stations')
+def show_stations():
+    """
+    API endpoint to retrieve ATIS data for stations from the configured URL.
+    This data includes detailed ATIS messages for specific stations like VABB.
+    """
+    URL = 'http://acdm.in/cdm/ShowStations.php?q=VABB'
+    data = get_atis_data(URL)
     return jsonify(data)
 
 
