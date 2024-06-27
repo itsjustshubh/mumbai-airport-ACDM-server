@@ -21,5 +21,6 @@ def get_atis_data(URL):
 
 if __name__ == '__main__':
     # Fetch and print the ATIS data in JSON format
-    atis_data_json = get_atis_data()
+    URL = 'http://acdm.in/cdm/ShowStations.php?q=VABB'
+    atis_data_json = get_atis_data(URL)
     print(atis_data_json)
