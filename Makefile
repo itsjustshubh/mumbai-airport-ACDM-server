@@ -8,7 +8,6 @@ run:
 	./venv/bin/python app.py
 
 clean:
-	rm -rf ./venv
 	find . -type f -name '*.pyc' -delete
 	find . -type d -name '__pycache__' -delete
 

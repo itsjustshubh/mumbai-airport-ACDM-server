@@ -48,8 +48,10 @@ airport-status-dashboard/
 
 2. **Set up the environment and install dependencies:**
 
+   You may copy the PHPSESSID provided if you don't have your own
+
    ```sh
-   make install
+   make setup
    ```
 
 3. **Launch the application:**

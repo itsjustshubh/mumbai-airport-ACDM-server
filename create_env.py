@@ -13,6 +13,10 @@ URL_DIV_CHART_TEST=http://acdm.in/cdm/div_chart_test.php
 """
 
 # Prompt the user to enter the PHPSESSID
+print("\nPlease enter the PHPSESSID from the browser cookies.")
+
+# Default PHPSESSID gjisaksgirgv56us3r92r3ej6a
+print("\n\nDefault PHPSESSID gjisaksgirgv56us3r92r3ej6a")
 phpsessid = input("Please enter the PHPSESSID: ")
 
 # Replace the placeholder with the actual PHPSESSID
